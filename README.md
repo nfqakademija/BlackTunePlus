@@ -3,3 +3,5 @@
 NFQ Akademija
 ============
  # BlackTunePlus
+ 
+ ![Travis](https://travis-ci.org/nfqakademija/BlackTunePlus.svg?branch=master)

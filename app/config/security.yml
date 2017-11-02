@@ -4,8 +4,8 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-                    our_users:
-                        entity: { class: AppBundle\Entity\User, property: email }
+         our_users:
+            entity: { class: AppBundle\Entity\User, property: email }
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -28,3 +28,15 @@ security:
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+# acces control. symfony siekia is apacios
+#role admin /admin
+#role user /profily
+#anon /login
+#anon /register
+#is authenticated anon /
+
+
+# econderis bcrypt
+
+
+# form login use referer

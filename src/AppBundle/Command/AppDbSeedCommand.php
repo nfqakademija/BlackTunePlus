@@ -28,15 +28,13 @@ class AppDbSeedCommand extends ContainerAwareCommand
         $fk = \Faker\Factory::create();
 
         if ($userCount = $input->getOption('option')) {
-            for($i=0; $i < $userCount; $i++){
+            for ($i=0; $i < $userCount; $i++) {
                 $user = new User();
                 $user->setFirstName($fk->name);
-
             }
             $em->flush();
         }
 
         $output->writeln('Command result.');
     }
-
 }

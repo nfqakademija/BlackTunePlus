@@ -19,7 +19,6 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use League\OAuth2\Client\Provider\FacebookUser;
 
-
 class FacebookAuthenticator extends SocialAuthenticator
 {
     private $clientRegistry;

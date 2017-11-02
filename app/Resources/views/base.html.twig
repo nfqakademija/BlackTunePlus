@@ -11,14 +11,13 @@
     {% block canonical_meta %}{% endblock %}
 </head>
 <body>
-<div class="container">
+<div class="container" style="position:relative;">
     {% block container %}
         {% block header %}
             {% include "::inc/header.html.twig" %}
         {% endblock %}
         {% block body %}{% endblock %}
     {% endblock %}
-</div>
 {% block footer %}
 {% include "::inc/footer.html.twig" %}
 {% endblock %}

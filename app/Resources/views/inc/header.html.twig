@@ -1,35 +1,51 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
+<style>
+    #bot{
+        position:absolute;
+        bottom:0;
+        right:0;
+    }
+    h2 {
+        font-family: 'Lobster', Georgia, Times, serif;
+        font-size: 45px;
+        line-height: 50px;
+    }
+    li{
+        font-family: 'Cabin', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+</style>
+
+<nav class="navbar navbar-collapse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">BlackTunePlus</a>
         </div>
+    <div class="navbar-collapse collapse transparent">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <h2>BlackTunePlus</h2>
+            </li>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="hidden active">
-                    <a href="#page-top"></a>
+        </ul>
+        <ul class="nav justify-content-end" id="bot">
+            <li class="hidden active">
+                <a href="#page-top"></a>
+            </li>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+                <li class="nav-item"> Logged in as: {{ app.user.username }} </li>
+                <li class="nav-item"><a href="{{ logout_path() }}">Logout</a></li>
+            {% else %}
+                <li class="nav-item">
+                    <a href="{{ path('app_facebook_connect') }}" class="link"> Login via FaceBook </a>
                 </li>
-                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-
-                    <li> Logged in as: {{ app.user.username }} </li>
-                    <li><a href="{{ logout_path() }}">Logout</a></li>
-                {% else %}
-                    <li>
-                        <a href="{{ path('app_facebook_connect') }}" class="link"> Login with FaceBook </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+            {% endif %}
+        </ul>
     </div>
 </nav>
+</div>

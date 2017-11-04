@@ -48,7 +48,6 @@ class FacebookAuthenticator extends SocialAuthenticator
         $facebookUser = $this->getFacebookClient()
             ->fetchUserFromToken($credentials);
 
-        // 1) have they logged in with Facebook before? Easy!
         $existingUser = $this->em->getRepository('AppBundle:User')
             ->findOneBy(['facebookId' => $facebookUser->getId()]);
         if ($existingUser) {

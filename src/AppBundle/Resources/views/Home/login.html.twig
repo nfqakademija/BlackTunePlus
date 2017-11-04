@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Login page - {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="container" style="text-align: center">
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <h2>You are already logged in {{ app.user.username }}.</h2>
+    {% else %}
+        <a href="{{ path('app_facebook_connect') }}" ><button>Login via FaceBook </button></a>
+    {% endif %}
+    </div>
+{% endblock %}

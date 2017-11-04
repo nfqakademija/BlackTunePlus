@@ -1,6 +1,6 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}Homepage - {{ parent() }}{% endblock %}
+{% block title %}About page - {{ parent() }}{% endblock %}
 
 {% block stylesheets %}
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -8,7 +8,7 @@
     {{ parent() }}
 {% endblock %}
 {% block body %}
-    <div class="container-fluid">
-        <img class="full-width" src="{{ asset('images/music-life.jpg') }}">
+    <div class="container">
+    <h1 style="text-align:center">About</h1>
     </div>
 {% endblock %}

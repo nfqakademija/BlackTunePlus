@@ -30,6 +30,6 @@ class FacebookController extends Controller
      */
     public function connectCheckAction(Request $request)
     {
-        return $this->render('AppBundle:Home:index.html.twig');
+        return $this->redirectToRoute('app.home');
     }
 }

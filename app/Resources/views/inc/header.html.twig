@@ -1,4 +1,4 @@
-<nav class="navbar navbar-collapse" role="navigation">
+<nav class="navbar navbar-collapse" role="navigation" style="border-bottom: solid 1px;">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -25,11 +25,11 @@
                 <a href="{{ path('app.about') }}">About</a>
             </li>
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <li class="nav-item"><a class="inactive"href="#" onclick="return false">Logged in as: {{ app.user.username }}</a> </li>
+                <li class="nav-item"><a class="inactive"href="#" onclick="return false">Logged in as {{ app.user.username }}</a> </li>
                 <li class="nav-item"><a href="{{ logout_path() }}">Logout</a></li>
             {% else %}
                 <li class="nav-item">
-                    <a href="{{ path('app.login') }}" class="link"> Login </a>
+                    <a href="{{ path('app.login') }}" class="link">Login </a>
                 </li>
             {% endif %}
         </ul>

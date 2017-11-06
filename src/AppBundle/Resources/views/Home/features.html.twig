@@ -1,0 +1,56 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Homepage - {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    {{ parent() }}
+    <style>
+        .row{
+            overflow: hidden;
+        }
+
+        [class*="col-"]{
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+        .container {
+            height:200%;
+
+
+        }
+        p{
+            font-family:Cabin;
+            font-size:1.5em;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row" style="height:90%; display: block;">
+        <div class="col-xs-6">
+            <img class="img-responsive" src="{{ asset('images/headphones1.jpg') }}">
+        </div>
+        <div class="col-xs-6 text-justify" style="background-color: #D0D2FF; height:100%;" >
+            <h2 style="text-align: center">Features</h2>
+            <p>
+                BlackTune+ features:
+                <ul>
+                <li>quality sound</li>
+                <li>noise isolation</li>
+                <li>mute, volume up, volume down buttons</li>
+                <li>Microphone</li>
+                </ul>
+            </p>
+            <p>
+                More features and so on
+            </p>
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}

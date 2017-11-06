@@ -26,11 +26,20 @@ class HomeController extends Controller
     {
         return $this->render('AppBundle:Home:about.html.twig');
     }
+
     /**
      * @Route("/login", name="app.login")
      */
     public function loginAction()
     {
         return $this->render('AppBundle:Home:login.html.twig');
+    }
+
+    /**
+     * @Route("/features", name="app.features")
+     */
+    public function featuresAction()
+    {
+        return $this->render('AppBundle:Home:features.html.twig');
     }
 }

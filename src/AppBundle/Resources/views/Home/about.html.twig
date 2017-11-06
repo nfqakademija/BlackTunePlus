@@ -1,14 +1,48 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}About page - {{ parent() }}{% endblock %}
+{% block title %}Homepage - {{ parent() }}{% endblock %}
 
 {% block stylesheets %}
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     {{ parent() }}
+    <style>
+        .row{
+            overflow: hidden;
+        }
+
+        [class*="col-"]{
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+        .container {
+            height:200%;
+
+
+        }
+        p{
+            font-family:Cabin;
+            font-size:1.5em;
+        }
+    </style>
 {% endblock %}
 {% block body %}
     <div class="container">
-    <h1 style="text-align:center">About</h1>
+        <div class="row" style="height:100%; display: block;">
+            <div class="col-xs-6">
+                <img class="img-responsive" style="height:100%; width:100%;" src="{{ asset('images/listening.jpg') }}">
+            </div>
+            <div class="col-xs-6 text-justify" style="background-color: #36454F; height:100%; color:whitesmoke" >
+                <h2 style="text-align: center">About</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+
+                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+
+            </div>
+        </div>
     </div>
+
+
 {% endblock %}

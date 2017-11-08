@@ -17,7 +17,10 @@ class AppKernel extends Kernel
             new KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+
             new AppBundle\AppBundle(),
+            new TestBundle\TestBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

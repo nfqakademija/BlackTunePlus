@@ -10,7 +10,6 @@ namespace AppBundle\EventListener;
 
 use Doctrine\ORM\EntityManagerInterface;
 use KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient;
-use League\OAuth2\Client\Token\AccessToken;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
 class PostFacebookLoginListener
@@ -23,15 +22,15 @@ class PostFacebookLoginListener
         $this->client =$client;
     }
 
-    public function onFacebookGetUser(InteractiveLoginEvent $event){
+    public function onFacebookGetUser(InteractiveLoginEvent $event)
+    {
         $user = $event->getAuthenticationToken()->getUser();
-        if(!empty($user->getPicture()))
+        if (!empty($user->getPicture())) {
             return;
-
+        }
         $fbUser = $this->client->fetchUserFromToken($user->getFbToken());
 
-        if($user)
-        {
+        if ($user) {
             $user->setPicture($fbUser->getPictureUrl());
             $this->em->persist($user);
             $this->em->flush();

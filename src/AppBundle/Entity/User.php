@@ -224,5 +224,4 @@ class User implements UserInterface
     {
         $this->picture = $picture;
     }
-
 }

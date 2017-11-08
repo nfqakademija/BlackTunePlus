@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use League\OAuth2\Client\Token\AccessToken;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -43,13 +44,42 @@ class User implements UserInterface
      */
     private $email;
 
-
     /**
      * @var string
      *
      * @ORM\Column(name="facebookId", type="string", length=255, nullable=true)
      */
     private $facebookId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="picture", type="string", nullable=true)
+     */
+    private $picture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fb_token", type="string")
+     */
+    private $fbToken;
+
+    /**
+     * @return mixed
+     */
+    public function getFbToken()
+    {
+        return $this->fbToken;
+    }
+
+    /**
+     * @param mixed $fbToken
+     */
+    public function setFbToken($fbToken)
+    {
+        $this->fbToken = $fbToken;
+    }
 
 
     /**
@@ -178,4 +208,21 @@ class User implements UserInterface
     {
         return $this->firstname . " " . $this->lastname;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+    }
+
 }

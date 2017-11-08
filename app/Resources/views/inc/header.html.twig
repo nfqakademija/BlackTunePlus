@@ -29,6 +29,9 @@
             </li>
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li class="nav-item"><a class="inactive"href="#" onclick="return false">Logged in as {{ app.user.username }}</a> </li>
+                <li class="nav-item"><a class="inactive"href="#" onclick="return false"><img src="{{ app.user.picture}}" style="width: 30px; height: 25px"></a> </li>
+
+
                 <li class="nav-item"><a href="{{ logout_path() }}">Logout</a></li>
             {% else %}
                 <li class="nav-item">

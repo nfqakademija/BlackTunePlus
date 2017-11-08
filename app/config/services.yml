@@ -28,3 +28,8 @@ services:
 #    app.example:
 #        class: AppBundle\Service\ExampleService
 #        arguments: ["@doctrine.orm.entity_manager"]
+  AppBundle\EventListener\PostFacebookLoginListener:
+        arguments: ['@doctrine.orm.default_entity_manager',
+         '@KnpU\OAuth2ClientBundle\Client\Provider\FacebookClient']
+        tags:
+          - { name: kernel.event_listener, event: security.interactive_login, method: onFacebookGetUser }

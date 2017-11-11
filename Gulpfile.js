@@ -4,6 +4,9 @@ var gulp    = require('gulp');
 var sass    = require('gulp-sass');
 var concat  = require('gulp-concat');
 var uglify  = require('gulp-uglify');
+var watch = require('gulp-watch');
+var util = require('gulp-util');
+const babel = require('gulp-babel');
 
 var dir = {
     assets: './src/AppBundle/Resources/',
@@ -23,12 +26,12 @@ gulp.task('scripts', function() {
             //Third party assets
             dir.npm + 'jquery/dist/jquery.min.js',
             dir.npm + 'bootstrap-sass/assets/javascripts/bootstrap.min.js',
-
+            dir.npm + 'slick-carousel/slick/slick.js',
             // Main JS file
             dir.assets + 'scripts/main.js'
         ])
         .pipe(concat('script.js'))
-        .pipe(uglify())
+        .pipe(uglify().on('error', util.log))
         .pipe(gulp.dest(dir.dist + 'js'));
 });
 
@@ -45,5 +48,10 @@ gulp.task('fonts', function() {
         ])
         .pipe(gulp.dest(dir.dist + 'fonts'));
 });
+
+// gulp.task('watch', function() {
+//     gulp.watch(dir.assets + 'scripts/main.js', ['scripts']);
+//     gulp.watch(dir.assets + 'styles/main.scss', ['sass']);
+// });
 
 gulp.task('default', ['sass', 'scripts', 'fonts', 'images']);

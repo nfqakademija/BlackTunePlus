@@ -3,14 +3,38 @@
   "version": "1.0.0",
   "license": "MIT",
   "author": "NFQ",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nfqakademija/BlackTunePlus.git"
+  },
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "bootstrap-sass": "3.*",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-cli": "^1.2.2",
     "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.4.2",
-    "bootstrap-sass": "3.*",
-    "jquery": "2.2.*"
-  }
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "jquery": "^2.2.4"
+  },
+  "description": "[![Travis CI build Status](https://travis-ci.org/nfqakademija/BlackTunePlus.svg?branch=master)](https://travis-ci.org/nfqakademija/BlackTunePlus) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nfqakademija/BlackTunePlus/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/nfqakademija/BlackTunePlus/badges/quality-score.png?b=master)",
+  "main": "Gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/nfqakademija/BlackTunePlus/issues"
+  },
+  "homepage": "https://github.com/nfqakademija/BlackTunePlus#readme"
 }

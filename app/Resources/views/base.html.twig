@@ -6,72 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
-        <style>
-            .full-width {
-                max-width: 100%;
-                min-width: 100%;
-                min-height: 50%;
-                max-height: 70%;
-                height: auto;
-                width: auto\9; /* ie8 */
-                padding-bottom: 5%;
-            }
-            body{
-                height:100%;
-            }
-            a{
-                color:inherit;
-            }
-            #bot{
-                position:absolute;
-                bottom:0;
-                right:0;
-            }
-            h1 {
-                font-family: 'Lobster', Georgia, Times, serif;
-                font-size: 75px;
-                line-height: 50px;
-                padding-bottom: 3%;
-            }
-            h2 {
-                font-family: 'Lobster', Georgia, Times, serif;
-                font-size: 45px;
-                line-height: 50px;
-            }
-            li{
-                font-family: 'Cabin', Helvetica, Arial, sans-serif;
-                font-size: 15px;
-                line-height: 20px;
-            }
-            .post{
-                min-width:100px;
-                min-height:200px;
-            }
-            .post {
-
-                position:relative;
-                background-color: #5eb5e0;
-                max-height:600px;
-                width: 95%;
-                float:left;
-            }
-
-            .post p {
-                width:300px;
-                padding: 20px 40px 20px 40px;
-                color: white;
-                font-size: 18px;
-                line-height: 35px;
-                word-spacing: 5px;
-            }
-
-            .post img {
-                position:relative;
-                min-height:600px;
-                width:450px;
-                float:right;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
     {% endblock %}
     {% block canonical_meta %}{% endblock %}
 </head>
@@ -88,6 +24,7 @@
 {% endblock %}
 {% block javascripts %}
     <script src="{{ asset('js/script.js') }}"></script>
+
 {% endblock %}
 </body>
 </html>

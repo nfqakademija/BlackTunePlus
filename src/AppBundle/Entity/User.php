@@ -66,6 +66,52 @@ class User implements UserInterface
     private $fbToken;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="spotify_access_token",type="string", nullable=true)
+     */
+    private $spotify_access_token;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="spotify_refresh_token",type="string", nullable=true)
+     */
+    private $spotify_refresh_token;
+
+    /**
+     * @return mixed
+     */
+    public function getSpotifyAccessToken()
+    {
+        return $this->spotify_access_token;
+    }
+
+    /**
+     * @param mixed $spotify_access_token
+     */
+    public function setSpotifyAccessToken($spotify_access_token)
+    {
+        $this->spotify_access_token = $spotify_access_token;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSpotifyRefreshToken()
+    {
+        return $this->spotify_refresh_token;
+    }
+
+    /**
+     * @param mixed $spotify_refresh_token
+     */
+    public function setSpotifyRefreshToken($spotify_refresh_token)
+    {
+        $this->spotify_refresh_token = $spotify_refresh_token;
+    }
+
+    /**
      * @return mixed
      */
     public function getFbToken()

@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:UserController:index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>User info</h2>
+            <label>{{ user.firstname }}</label>
+            <br>
+            <label>{{ user.lastname }}</label>
+            <br>
+            <label>{{ user.email }}</label>
+            <br>
+            <img src="{{ app.user.picture}}" style="width: 30px; height: 25px">
+            <br>
+            <button><a href="/{{ path('connect_spotify') }}">Connect to spotify</a></button>
+         </div>
+        <div class="col-lg-6">
+            <H2>Playlists</H2>
+            {% for playlist in playlists.items %}
+                <iframe src="https://open.spotify.com/embed?uri={{ playlist.uri }}"
+                        widht="350px" height="380px" frameborder="0" allowtransparency="true"></iframe>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

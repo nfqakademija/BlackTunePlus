@@ -60,7 +60,7 @@ class SpotifyController extends Controller
 
         $user = $this->getUser();
 
-        if($user->getSpotifyAccessToken() == $accessToken && $user->getSpotifyRefreshToken() == $refreshToken) {
+        if ($user->getSpotifyAccessToken() == $accessToken && $user->getSpotifyRefreshToken() == $refreshToken) {
             $api = new SpotifyWebAPI();
             $api->setAccessToken($accessToken);
 //           $accessToken = $this->session->refreshAccessToken($refreshToken);

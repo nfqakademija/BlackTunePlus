@@ -36,6 +36,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        admin_skin: skin-blue
 
 # Doctrine Configuration
 doctrine:
@@ -82,3 +84,5 @@ knpu_oauth2_client:
             # route parameters to pass to your route, if needed
             redirect_params: {}
             graph_api_version: v2.8
+assetic:
+    use_controller: false

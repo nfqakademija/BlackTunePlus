@@ -20,6 +20,9 @@ security:
                     - 'facebook-auth'
             logout:
                 path: /logout
+    access_control:
+     # require ROLE_ADMIN for /admin*
+        - { path: ^/admin, roles: ROLE_ADMIN }
 
             # activate different ways to authenticate
 
@@ -28,6 +31,7 @@ security:
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
 # acces control. symfony siekia is apacios
 #role admin /admin
 #role user /profily

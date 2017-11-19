@@ -80,6 +80,13 @@ class User implements UserInterface
     private $spotify_refresh_token;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="role", type="string")
+     */
+    private $role;
+
+    /**
      * @return mixed
      */
     public function getSpotifyAccessToken()

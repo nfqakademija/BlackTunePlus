@@ -10,6 +10,7 @@ use SpotifyWebAPI\SpotifyWebAPI;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+
 /**
  *
  */
@@ -46,7 +47,7 @@ class SpotifyController extends Controller
             'scope' => [
                 'playlist-read-private',
                 'user-read-private',
-                'user-library-read'
+                'user-library-read',
             ],
         ];
     }
@@ -75,10 +76,13 @@ class SpotifyController extends Controller
             $playlists = $api->getUserPlaylists($api->me()->id);
             dump($user);
 
-            return $this->render('AppBundle:User:index.html.twig', [
-                'user' => $this->getUser(),
-                'playlists' => $playlists
-            ]);
+            return $this->render(
+                'AppBundle:User:index.html.twig',
+                [
+                    'user' => $this->getUser(),
+                    'playlists' => $playlists,
+                ]
+            );
         }
 
         $user->setSpotifyAccessToken($accessToken);
@@ -95,18 +99,18 @@ class SpotifyController extends Controller
         $spotify_user = $api->me();
         $limit = 50;
         $offset = 49;
-            $user_songs = $api->getMySavedTracks(
-                [
-                    'limit' => $limit,
-                ]
-            );
+        $user_songs = $api->getMySavedTracks(
+            [
+                'limit' => $limit,
+            ]
+        );
         $total = $user_songs->total;
         $songs[] = $user_songs->items;
-        while($offset < $total){
+        while ($offset < $total) {
             $songs[] = $api->getMySavedTracks(
                 [
                     'limit' => $limit,
-                    'offset' => $offset
+                    'offset' => $offset,
                 ]
             )->items;
             $offset += 50;
@@ -114,10 +118,13 @@ class SpotifyController extends Controller
         dump($spotify_user);
         dump($songs);
 
-        return $this->render('AppBundle:User:index.html.twig', [
-            'user' => $this->getUser(),
-            'songs' => $songs
-        ]);
+        return $this->render(
+            'AppBundle:User:index.html.twig',
+            [
+                'user' => $this->getUser(),
+                'songs' => $songs,
+            ]
+        );
     }
 
     /**

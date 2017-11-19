@@ -3,14 +3,13 @@
 namespace AppBundle\Controller;
 
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use SpotifyWebAPI\Session;
 use SpotifyWebAPI\SpotifyWebAPI;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use AppBundle\Entity\User;
-
 /**
  *
  */
@@ -26,6 +25,9 @@ class SpotifyController extends Controller
      */
     private $options;
 
+    /**
+     * @var EntityManager
+     */
     private $em;
 
     /**
@@ -44,6 +46,7 @@ class SpotifyController extends Controller
             'scope' => [
                 'playlist-read-private',
                 'user-read-private',
+                'user-library-read'
             ],
         ];
     }
@@ -88,11 +91,32 @@ class SpotifyController extends Controller
         $api = new SpotifyWebAPI();
         $api->setAccessToken($accessToken);
 
-        $playlists = $api->getUserPlaylists($api->me()->id);
+        dump($api);
+        $spotify_user = $api->me();
+        $limit = 50;
+        $offset = 49;
+            $user_songs = $api->getMySavedTracks(
+                [
+                    'limit' => $limit,
+                ]
+            );
+        $total = $user_songs->total;
+        $songs[] = $user_songs->items;
+        while($offset < $total){
+            $songs[] = $api->getMySavedTracks(
+                [
+                    'limit' => $limit,
+                    'offset' => $offset
+                ]
+            )->items;
+            $offset += 50;
+        }
+        dump($spotify_user);
+        dump($songs);
 
         return $this->render('AppBundle:User:index.html.twig', [
             'user' => $this->getUser(),
-            'playlists' => $playlists
+            'songs' => $songs
         ]);
     }
 
@@ -101,7 +125,6 @@ class SpotifyController extends Controller
      */
     public function authorizeAction()
     {
-        header('Location: ' . $this->session->getAuthorizeUrl());
-        die();
+        return new RedirectResponse($this->session->getAuthorizeUrl($this->options));
     }
 }

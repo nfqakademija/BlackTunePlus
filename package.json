@@ -28,6 +28,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {

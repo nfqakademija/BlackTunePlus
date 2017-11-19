@@ -8,11 +8,34 @@
     {{ parent() }}
 {% endblock %}
 {% block body %}
-    <div class="container" style="text-align: center">
-    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-        <h2>You are already logged in {{ app.user.username }}.</h2>
-    {% else %}
-        <a href="{{ path('app_facebook_connect') }}" ><button>Login via FaceBook </button></a>
-    {% endif %}
+<div class="container">
+
+    <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
+
+    <div class="container text-center">
+        <form class="form-signin" data-ember-action="2">
+            <h2 class="form-signin-heading">Sign in</h2>
+
+            <small class="text-muted">Connect to BlackTunePlus with your favorite social network</small>
+            <br><br>
+
+
+            <p>
+                <a class="btn btn-primary social-login-btn social-facebook" href="{{ path('app_facebook_connect') }}"><i class="fa fa-facebook"></i></a>
+                <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+            </p>
+            <p>
+                <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+                <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+            </p>
+        </form>
     </div>
+</div>
+    {#<div class="container" style="text-align: center">#}
+    {#{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}#}
+        {#<h2>You are already logged in {{ app.user.username }}.</h2>#}
+    {#{% else %}#}
+        {#<a href="{{ path('app_facebook_connect') }}" ><button>Login via FaceBook </button></a>#}
+    {#{% endif %}#}
+    {#</div>#}
 {% endblock %}

@@ -87,14 +87,6 @@ class User implements UserInterface
     private $role;
 
     /**
-     * @return string
-     */
-    public function getRole(): string
-    {
-        return $this->role;
-    }
-
-    /**
      * @param string $role
      */
     public function setRole(string $role)
@@ -266,8 +258,7 @@ class User implements UserInterface
     }
     public function getRoles()
     {
-        $roles[] = 'user';
-        return $roles;
+        return $this->role;
     }
     public function getSalt()
     {

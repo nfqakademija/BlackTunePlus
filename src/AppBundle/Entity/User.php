@@ -87,6 +87,22 @@ class User implements UserInterface
     private $role;
 
     /**
+     * @return string
+     */
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param string $role
+     */
+    public function setRole(string $role)
+    {
+        $this->role = $role;
+    }
+
+    /**
      * @return mixed
      */
     public function getSpotifyAccessToken()

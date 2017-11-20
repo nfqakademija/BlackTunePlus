@@ -28,7 +28,7 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profile, role: [ROLE_USER, ROLE_ADMIN] }
         - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/feature, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/features, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/about, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
             # activate different ways to authenticate

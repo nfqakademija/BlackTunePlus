@@ -21,14 +21,14 @@
                     <!-- END SIDEBAR USER TITLE -->
                     <!-- SIDEBAR BUTTONS -->
                     <div class="profile-userbuttons">
-                        <button type="button" class="btn btn-success btn-sm"><a href={{ path('connect_spotify') }}></a>Spotify Link</button>
+                        <a href="{{ path('connect_spotify') }}" class="btn btn-success btn-sm"><i class="fa fa-spotify fa-2x" aria-hidden="true"></i>  Spotify Link</a>
                     </div>
                     <!-- END SIDEBAR BUTTONS -->
                     <!-- SIDEBAR MENU -->
                     <div class="profile-usermenu">
                         <ul class="nav">
                             <li class="active">
-                                <a href="#">
+                                <a href="">
                                     <i class="glyphicon glyphicon-home"></i>
                                     Overview </a>
                             </li>
@@ -39,7 +39,7 @@
                             </li>
                             <li>
                                 <a href="#" target="_blank">
-                                    <i class="glyphicon glyphicon-ok"></i>
+                                    <i class="glyphicon glyphicon-music"></i>
                                     Songs </a>
                             </li>
                             <li>
@@ -52,15 +52,15 @@
                     <!-- END MENU -->
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="profile-content">
-                    <H2>Playlists</H2>
-                    {% for playlist in playlists.items %}
-                    <iframe src="https://open.spotify.com/embed?uri={{ playlist.uri }}"
-                    widht="350px" height="380px" frameborder="0" allowtransparency="true"></iframe>
-                    {% endfor %}
-                </div>
-            </div>
+            {#<div class="col-md-9">#}
+                {#<div class="profile-content">#}
+                    {#<H2>Playlists</H2>#}
+                    {#{% for playlist in playlists.items %}#}
+                    {#<iframe src="https://open.spotify.com/embed?uri={{ playlist.uri }}"#}
+                    {#widht="350px" height="380px" frameborder="0" allowtransparency="true"></iframe>#}
+                    {#{% endfor %}#}
+                {#</div>#}
+            {#</div>#}
         </div>
     </div>
     <br>

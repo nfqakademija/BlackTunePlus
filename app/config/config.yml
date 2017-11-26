@@ -86,3 +86,5 @@ knpu_oauth2_client:
             graph_api_version: v2.8
 assetic:
     use_controller: false
+hautelook_alice:
+    fixtures_path: 'Resources/fixtures/orm' # Path to which to look for fixtures relative to the project directory or the bundle path.

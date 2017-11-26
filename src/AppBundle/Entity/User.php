@@ -61,7 +61,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="fb_token", type="string")
+     * @ORM\Column(name="fb_token", type="string", nullable=true)
      */
     private $fbToken;
 

@@ -1,0 +1,9 @@
+# Resources/fixtures/orm/product.yml
+
+AppBundle\Entity\Product:
+    product{1..100}:
+        title: <word()>
+        description: <sentence()>
+        price: <randomFloat()>
+        remainder: <randomDigit()>
+        picture: <word()>

@@ -1,0 +1,10 @@
+# Resources/fixtures/orm/order.yml
+
+AppBundle\Entity\Order:
+    orders{1..100}:
+        user: '@user*'
+        product: '@product*'
+        amount: <randomDigit()>
+        address: <address()>
+        totalSum: <randomFloat()>
+        created_at: <date($format = 'Y-m-d', $max = 'now')>

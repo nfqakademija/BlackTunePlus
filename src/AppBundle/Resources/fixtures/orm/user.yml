@@ -1,0 +1,16 @@
+# Resources/fixtures/orm/user.yml
+
+AppBundle\Entity\User:
+    user{1..100}:
+        firstname: <firstName()>
+        lastname: <lastName()>
+        email: <email()>
+        role: 'ROLE_USER'
+    user_admin:
+        firstname: 'Lukas'
+        lastname: 'Lideika'
+        email: 'lukas006789@yahoo.com'
+        facebookId: '1870515676311236'
+        fbToken: 'EAALrjBudLnkBADTe9KXz3napa5k1USgaYGxiTelCP2lCFFsKP8e84z6e80oUIAZAXiWOJJX94kUeyb08NplykUcUZAKQ1wts7lOsF4lZBb2qMdJGcwNJUa0ftpxGrGbZCEZC8BjRC0m2zP5IZBZBmriAbAZCzU8q2JtBjKW11JsyZCwZDZD'
+        picture: 'https://scontent.xx.fbcdn.net/v/t1.0-1/c59.0.200.200/p200x200/10354686_10150004552801856_220367501106153455_n.jpg?oh=101724b4a18bbdaaef891262c95cec9b&oe=5A98DF25'
+        role: 'ROLE_ADMIN'

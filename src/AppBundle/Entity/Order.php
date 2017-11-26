@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Order
  *
- * @ORM\Table(name="order")
+ * @ORM\Table(name="orders")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\OrderRepository")
  */
 class Order
@@ -21,19 +21,51 @@ class Order
      */
     private $id;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="user_id", type="integer")
-     */
-    private $userId;
 
     /**
-     * @var int
+     * @var User
      *
-     * @ORM\Column(name="product_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="User")
      */
-    private $productId;
+    private $user;
+    /**
+     * @var Product
+     *
+     * @ORM\ManyToOne(targetEntity="Product")
+     */
+    private $product;
+
+    /**
+     * @return User
+     */
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return Product
+     */
+    public function getProduct(): Product
+    {
+        return $this->product;
+    }
+
+    /**
+     * @param Product $product
+     */
+    public function setProduct(Product $product)
+    {
+        $this->product = $product;
+    }
 
     /**
      * @var \DateTime
@@ -48,6 +80,48 @@ class Order
      * @ORM\Column(name="amount", type="integer")
      */
     private $amount;
+
+    /**
+     * @ORM\Column(name="address", type="string")
+     */
+    private $address;
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param mixed $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTotalSum()
+    {
+        return $this->totalSum;
+    }
+
+    /**
+     * @param mixed $totalSum
+     */
+    public function setTotalSum($totalSum)
+    {
+        $this->totalSum = $totalSum;
+    }
+
+    /**
+     * @ORM\Column(name="total_sum", type="string")
+     */
+    private $totalSum;
 
 
     /**

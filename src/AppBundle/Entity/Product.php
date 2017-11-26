@@ -28,6 +28,7 @@ class Product
      */
     private $title;
 
+
     /**
      * @var string
      *
@@ -41,6 +42,56 @@ class Product
      * @ORM\Column(name="price", type="float")
      */
     private $price;
+
+    /**
+     * @ORM\Column(name="remainder", type="string")
+     */
+    private $remainder;
+
+    /**
+     * @ORM\Column(name="picture", type="string")
+     */
+    private $picture;
+
+    /**
+     * @return mixed
+     */
+    public function getRemainder()
+    {
+        return $this->remainder;
+    }
+
+    /**
+     * @param mixed $remainder
+     */
+    public function setRemainder($remainder)
+    {
+        $this->remainder = $remainder;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+    }
 
 
     /**

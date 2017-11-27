@@ -15,5 +15,10 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
+    admin_skin: skin-blue
+    spotify_client: 35074dc7891e4b52b31896a985e1e1d7
+    spotify_secret: b7cb29a07dc240aa86adc8e3498c9f6c
+    spotify_redirect_uri: http://127.0.0.1:8000/connect/spotify/check
+
     # A secret key that's used to generate certain security-related tokens
     secret:            SuperSecretAcademyHashKeyDoNotTellAnyone

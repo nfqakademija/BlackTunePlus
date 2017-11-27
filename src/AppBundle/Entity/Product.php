@@ -54,6 +54,28 @@ class Product
     private $picture;
 
     /**
+     * @ORM\OneToMany(targetEntity="Order", mappedBy="product")
+     */
+    private $orders;
+
+    /**
+     * @return mixed
+     */
+    public function getOrders()
+    {
+        return $this->orders;
+    }
+
+    /**
+     * @param mixed $orders
+     */
+    public function setOrders($orders)
+    {
+        $this->orders = $orders;
+    }
+
+
+    /**
      * @return mixed
      */
     public function getRemainder()

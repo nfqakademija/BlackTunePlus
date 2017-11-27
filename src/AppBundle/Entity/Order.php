@@ -24,14 +24,15 @@ class Order
 
     /**
      * @var User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="orders")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
+
     /**
      * @var Product
-     *
-     * @ORM\ManyToOne(targetEntity="Product")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="orders")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $product;
 
